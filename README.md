@@ -1,5 +1,4 @@
 # Fine tunning Large-Language-Models
-
 Fine-tuning is the process of taking a pre-trained model and adjusting at least one internal parameter (i.e., weights) during training. In the context of Large Language Models (LLMs), fine-tuning transforms a general-purpose base model (e.g., GPT-3) into a specialized model tailored for a specific use case (e.g., ChatGPT).
 
 The primary advantage of fine-tuning is that it allows models to achieve improved performance with fewer manually labeled examples compared to models trained solely via supervised learning.
@@ -56,10 +55,18 @@ Transfer learning (TL) involves preserving the useful representations/features l
 
 Parameter Efficient Fine-tuning (PEFT) is a family of techniques aimed at fine-tuning a base model with a small number of trainable parameters. One popular method within PEFT is Low-Rank Adaptation (LoRA), which modifies a subset of layers' weights using a low-rank matrix decomposition technique. LoRA significantly reduces the number of trainable parameters while maintaining performance comparable to full parameter tuning.
 
-To illustrate how PEFT can be applied in practice, let's explore an example of fine-tuning a language model efficiently using LoRA.
+Other popular and more efficinet method is quantized-lora (or qlora). QLoRA is a fine-tuning technique that combines a high-precision computing technique with a low-precision storage method. It is one of the most memory and computationally efficient fine-tuning methods ever created. QLoRA works by transmitting gradient signals through a fixed, 4-bit quantized pre-trained language model into Low Rank Adapters (LoRA). The weights of a pre-trained language model are quantized to 4-bits using the NormalFloat encoding. This produces a 4-bit base model that retains the full model architecture but with weights stored in a compact quantized format.
 
 ## Example Code: Fine-tuning an LLM using LoRA
 
 We will demonstrate fine-tuning a language model using LoRA for sentiment classification. We'll use the Hugging Face ecosystem to fine-tune the `distilbert-base-uncased` model, a ~70M parameter model based on BERT, for classifying text as 'positive' or 'negative'. By employing transfer learning and LoRA, we can efficiently fine-tune the model to run on personal computers within a reasonable timeframe.
 
-For detailed code examples and resources, please refer to the GitHub repository and Hugging Face for the final model and dataset.
+## Supervised fine tuning (in 5 steps)
+1. Choose a fine-tuning task
+2. Prepare training dataset
+3. choose a base model
+4. Fine-tune model via supervised learning
+5. Evaluate model performance
+
+   
+--->>>> For detailed code examples and resources, please refer to the GitHub repository and Hugging Face for the final model and dataset.
