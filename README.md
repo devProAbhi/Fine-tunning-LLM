@@ -66,9 +66,17 @@ Parameter Efficient Fine-tuning (PEFT) is a family of techniques aimed at fine-t
 
 Other popular and more efficinet method is quantized-lora (or qlora). QLoRA is a fine-tuning technique that combines a high-precision computing technique with a low-precision storage method. It is one of the most memory and computationally efficient fine-tuning methods ever created. QLoRA works by transmitting gradient signals through a fixed, 4-bit quantized pre-trained language model into Low Rank Adapters (LoRA). The weights of a pre-trained language model are quantized to 4-bits using the NormalFloat encoding. This produces a 4-bit base model that retains the full model architecture but with weights stored in a compact quantized format.
 
-## Example Code: Fine-tuning an LLM using LoRA
+## Example Code 1: Fine-tuning an LLM using LoRA
 
 We will demonstrate fine-tuning a language model using LoRA for sentiment classification. We'll use the Hugging Face ecosystem to fine-tune the `distilbert-base-uncased` model, a ~70M parameter model based on BERT, for classifying text as 'positive' or 'negative'. By employing transfer learning and LoRA, we can efficiently fine-tune the model to run on personal computers within a reasonable timeframe.
+by using this PEFT method, we can reduce training parameters 
+>> trainable params: 628,994 || all params: 67,584,004 || trainable%: 0.9306847223789819
+
+## Example code 2: Fine-tuning an LLM using Qlora
+
+we will demonstate fine-tuning a model using qlora for summarizing the conversation. we'll be using hugging face ecosystem to fine-tune the NousResearch/Llama-2-7b-hf model, a ~7B parameter model based of llama 2. for summarized the conversation between person. By employing transfer learning and QLoRA, we can efficiently fine-tune the model to run on personal computers within a reasonable timeframe.
+by using this PEFT method, we can reduce training parameters 
+>> trainable params: 16777216 || all params: 3517190144 || trainable%: 0.477006226934315
 
    
 --->>>> For detailed code examples and resources, please refer to the GitHub repository and Hugging Face for the final model and dataset.
