@@ -1,4 +1,13 @@
 # Fine tunning Large-Language-Models
+
+## Supervised fine tuning (in 5 steps)
+1. Choose a fine-tuning task
+2. Prepare training dataset
+3. choose a base model
+4. Fine-tune model via supervised learning
+5. Evaluate model performance
+
+   
 Fine-tuning is the process of taking a pre-trained model and adjusting at least one internal parameter (i.e., weights) during training. In the context of Large Language Models (LLMs), fine-tuning transforms a general-purpose base model (e.g., GPT-3) into a specialized model tailored for a specific use case (e.g., ChatGPT).
 
 The primary advantage of fine-tuning is that it allows models to achieve improved performance with fewer manually labeled examples compared to models trained solely via supervised learning.
@@ -60,13 +69,6 @@ Other popular and more efficinet method is quantized-lora (or qlora). QLoRA is a
 ## Example Code: Fine-tuning an LLM using LoRA
 
 We will demonstrate fine-tuning a language model using LoRA for sentiment classification. We'll use the Hugging Face ecosystem to fine-tune the `distilbert-base-uncased` model, a ~70M parameter model based on BERT, for classifying text as 'positive' or 'negative'. By employing transfer learning and LoRA, we can efficiently fine-tune the model to run on personal computers within a reasonable timeframe.
-
-## Supervised fine tuning (in 5 steps)
-1. Choose a fine-tuning task
-2. Prepare training dataset
-3. choose a base model
-4. Fine-tune model via supervised learning
-5. Evaluate model performance
 
    
 --->>>> For detailed code examples and resources, please refer to the GitHub repository and Hugging Face for the final model and dataset.
